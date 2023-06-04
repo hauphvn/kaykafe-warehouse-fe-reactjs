@@ -5,10 +5,9 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import './Login.scss';
 import { TokenService } from 'src/ultils/tokenService';
 import { useNavigate } from 'react-router-dom';
-import { API_PATH, NAVIGATION_PATH, ROLE_USER } from 'src/app/constant';
+import { API_PATH, NAVIGATION_PATH } from 'src/app/constant';
 import { useAppDispatch } from 'src/app/hooks';
 import { onSetAuthStatus, onSetShowLoading, onSetToastStatus } from 'src/redux/auth/authSlice';
-import { decodeToken } from 'react-jwt';
 import FormWrapper from 'src/component/layout/FormWrapper/FormWrapper';
 import { post } from 'src/ultils/request';
 import Logo from 'src/assets/svg/logo.svg';
@@ -28,42 +27,30 @@ function Login() {
     defaultValues: {
       email: '',
       password: '',
-      companyId: '',
     },
   });
 
   const onLogin = () => {
-    const { email, password, companyId } = getValues();
+    const { email, password } = getValues();
     const data = {
       email,
       password,
-      company_id: companyId,
     };
     dispatch(onSetShowLoading('loading'));
     post(API_PATH.LOGIN, data)
       .then(res => {
         const response = res?.data;
         if (response) {
-          const { access_token, refresh_token, is_frist, background_color, text_color } = response;
-          if (is_frist) {
-            window.location.replace(
-              `${window.location.origin}${NAVIGATION_PATH.CHANGE_PASSWORD_FIRST}?token=${access_token}`,
-            );
+          const { accessToken, refreshToken, email } = response;
+          TokenService.setToken(accessToken);
+          TokenService.setRefreshToken(refreshToken);
+          // const myDecodedToken: any = decodeToken(access_token);
+          // TokenService.setRoleToken(myDecodedToken?.user_role?.toLowerCase());
+          dispatch(onSetAuthStatus(true));
+          if (email === 'kaykafe.com@gmail.com') {
+            navigate(NAVIGATION_PATH.CONTRACT_MANAGEMENT);
           } else {
-            TokenService.setToken(access_token);
-            TokenService.setRefreshToken(refresh_token);
-            const infoColor = JSON.stringify({ background: background_color, textColor: text_color });
-            TokenService.setInfoColor(infoColor);
-            const myDecodedToken: any = decodeToken(access_token);
-            TokenService.setRoleToken(myDecodedToken?.user_role?.toLowerCase());
-            dispatch(onSetAuthStatus(true));
-            if (myDecodedToken?.role === ROLE_USER.ADMIN) {
-              navigate(NAVIGATION_PATH.CONTRACT_MANAGEMENT);
-            } else if (myDecodedToken?.role === ROLE_USER.COMPANY) {
-              navigate(NAVIGATION_PATH.COMPANY_NOTICE);
-            } else {
-              navigate(NAVIGATION_PATH.DOCUMENT_USER);
-            }
+            navigate(NAVIGATION_PATH.DOCUMENT_USER);
           }
         } else {
           dispatch(
@@ -101,22 +88,6 @@ function Login() {
   return (
     <FormWrapper title={contentTitle} className="login-root">
       <>
-        <Controller
-          control={control}
-          name="companyId"
-          render={({ field: { onChange, onBlur, value } }) => (
-            <Input
-              className="text-input"
-              textWarning={errors?.companyId?.message ? errors?.companyId?.message + '' : ''}
-              onChange={onChange}
-              onBlur={onBlur}
-              value={value}
-              placeholder="契約企業IDを入力して下さい"
-              label="契約企業ID"
-            />
-          )}
-        />
-
         <Controller
           control={control}
           name="email"

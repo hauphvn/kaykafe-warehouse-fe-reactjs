@@ -23,7 +23,7 @@ export const NAVIGATION_PATH = {
 };
 
 export const API_PATH = {
-  LOGIN: '/login',
+  LOGIN: '/user/sign-in',
   LOGOUT: '/logout',
   REFRESH_TOKEN: '/token/refresh',
   ADMIN_COMPANY: '/admin/company',
