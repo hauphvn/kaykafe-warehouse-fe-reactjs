@@ -1,0 +1,82 @@
+@import 'src/scss/variables';
+@import 'src/scss/mixins';
+.input-root {
+  display: flex;
+  // gap: 0.9rem;
+  &.input-required {
+    @include text-required;
+  }
+
+  .label {
+    padding-top: 0.8rem;
+    min-width: fit-content;
+  }
+  .input-wrapper {
+    width: 100%;
+
+    .ant-input {
+      height: 3.5rem;
+      font-size: $font-text_small;
+      line-height: 1.89rem;
+      border-radius: 0.8rem;
+      border-color: $color-border;
+      @include input-placeholder;
+      &.ant-input-disabled {
+        border-color: rgba($color: $color-border, $alpha: 0.5) !important;
+        color: $color-black;
+      }
+    }
+    &.input-password input.ant-input {
+      padding-right: 4rem;
+    }
+
+    .ant-input-affix-wrapper {
+      height: 3.5rem;
+      font-size: $font-text_small;
+      line-height: 1.89rem;
+      border-radius: 0.8rem;
+      border-color: $color-border;
+      .ant-input {
+        height: 100%;
+        border: none;
+      }
+      &:focus,
+      &:hover {
+        .ant-input-clear-icon {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .required {
+    color: $color-required;
+    font-size: $font-text_required;
+    line-height: 1.6rem;
+  }
+  .input-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+
+    .icon-password {
+      cursor: pointer;
+      position: absolute;
+      right: 0rem;
+    }
+
+    .label-after {
+      color: $color-grey;
+    }
+  }
+  &.disable-white {
+    .ant-input.ant-input-disabled {
+      border-color: $color-border;
+      background-color: $color-white;
+    }
+  }
+  .ant-input-clear-icon {
+    font-size: 2.3rem;
+    opacity: 0;
+  }
+}

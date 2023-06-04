@@ -1,0 +1,65 @@
+@import 'src/scss/mixins';
+
+@mixin auth-block($pdTop, $width: 61.4rem) {
+  width: $width;
+  padding-top: $pdTop;
+}
+
+@mixin auth-title($pdTopTitle) {
+  text-align: center;
+  padding-top: $pdTopTitle;
+  font-size: $font-title_big;
+}
+
+@mixin auth-input {
+  .input-wrapper {
+    min-height: 8.7rem;
+    .input-item {
+      .ant-input {
+        @include input-custom-border-bottom;
+      }
+    }
+  }
+}
+
+@mixin auth-btn {
+  margin-bottom: 4.3rem;
+  height: 4rem;
+  &.button-root {
+    width: 100%;
+  }
+}
+
+@mixin auth-text-link {
+  cursor: pointer;
+  text-align: center;
+  color: $color-primary;
+  width: fit-content;
+  margin: 0 auto;
+}
+@mixin cssFormWrapper($formWidth: 75rem, $titleHeight, $contentHeight, $contentPD, $titlePD) {
+  @include auth-block(0, $formWidth);
+  .ant-divider.ant-divider-horizontal {
+    margin: 0 !important;
+  }
+  .text-title {
+    @if ($titleHeight) {
+      line-height: $titleHeight;
+      color: $color-primary;
+    }
+    @if ($titlePD) {
+      padding: $titlePD;
+    }
+  }
+  .input-form {
+    @if ($contentHeight) {
+      height: $contentHeight;
+      max-height: $contentHeight;
+      overflow-y: auto;
+    }
+    @if ($contentPD) {
+      padding: $contentPD;
+    }
+    width: 100%;
+  }
+}

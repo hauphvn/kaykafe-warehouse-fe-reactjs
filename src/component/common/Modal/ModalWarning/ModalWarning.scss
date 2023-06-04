@@ -1,0 +1,39 @@
+@import 'src/scss/mixins';
+
+.modal-custom-root {
+  &.modal-warning-root {
+    max-width: 60rem !important;
+    width: 100% !important;
+
+    .ant-modal-body {
+      .modal-custom-content .modal-custom-content-header {
+        padding-bottom: 0 !important;
+      }
+    }
+
+    .modal-custom-content-header-title {
+      font-family: NotoSansJP-Bold, sans-serif;
+      font-size: $font-text_big;
+    }
+
+    .model-warning-content {
+      height: 13.2rem;
+      margin-bottom: 2.3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $color-grey4;
+      font-size: $font-text;
+
+      span.high-line {
+        color: $color-red-1;
+      }
+    }
+
+    .modal-custom-content-action-footer-submit {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+

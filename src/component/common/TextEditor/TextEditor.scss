@@ -1,0 +1,54 @@
+@import 'src/scss/mixins';
+@import 'src/scss/variables';
+.text-editor-root {
+  font-size: $font-text;
+  line-height: 2.4rem;
+  display: flex;
+  border-radius: 0.8rem;
+
+  &.text-editor-required {
+    @include text-required;
+  }
+
+  .text-editor-wrapper {
+    .text-editor-root {
+      font-size: $font-text;
+      line-height: 2.4rem;
+      min-height: 9.8rem;
+      color: $color-black;
+      &:hover,
+      &:focus {
+        box-shadow: none;
+      }
+    }
+    .text-editor {
+      resize: none;
+      &.ant-input-disabled {
+        color: $color-black;
+        border-color: rgba($color: $color-border, $alpha: 0.5) !important;
+      }
+    }
+    .rsw-editor{
+      max-height: 17rem;
+      .rsw-ce{
+        max-height: calc(100% - 3.3rem);
+        overflow-y: scroll;
+      }
+    }
+  }
+
+  .label {
+    //padding-top: 3.8rem;
+  }
+
+  .required {
+    color: $color-required;
+    font-size: $font-text_required;
+  }
+  &.disable-white {
+    .ant-input.ant-input-disabled {
+      background-color: $color-white;
+      color: $color-black;
+    }
+  }
+}

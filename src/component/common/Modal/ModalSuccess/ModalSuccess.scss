@@ -1,0 +1,5 @@
+@import 'src/scss/mixins';
+
+.modal-success-root {
+  @include modal;
+}

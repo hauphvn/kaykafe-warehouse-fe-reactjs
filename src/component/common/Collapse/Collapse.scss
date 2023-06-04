@@ -1,0 +1,40 @@
+@import 'src/scss/variables';
+.collapse-root {
+  &.ant-collapse {
+    width: 100%;
+    margin-bottom: 0.5rem !important;
+    background-color: $color-white;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 0.3rem 0.6rem $color-box-shadow;
+
+    .ant-collapse-item {
+      .ant-collapse-header {
+        height: 5.6rem;
+        align-items: center !important;
+        text-align: center !important;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        padding: 1.5rem !important;
+        font-size: $font-text;
+        line-height: 2.4rem;
+        .ant-collapse-arrow {
+          transform: matrix(-1, 0, 0, -1, 0, 0);
+        }
+        .ant-collapse-arrow {
+          svg {
+            width: 2rem;
+            height: 2rem;
+            transform: rotate(180deg);
+          }
+        }
+      }
+      .ant-collapse-content {
+        border-top: $border;
+      }
+    }
+    .collapse-root__content {
+      text-align: left;
+    }
+  }
+}

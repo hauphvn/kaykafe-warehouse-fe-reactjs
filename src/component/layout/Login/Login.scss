@@ -1,0 +1,67 @@
+@import 'src/scss/auth';
+
+.login-root {
+  padding-bottom: 2rem;
+  .text-title {
+    .header-text {
+      padding-top: 3.1rem;
+      font-weight: 600;
+      font-size: 2rem;
+      line-height: 2.2rem;
+
+      color: $color-grey2;
+    }
+  }
+  .ant-divider {
+    margin-top: 1.8rem !important;
+  }
+  .input-root {
+    &:nth-child(1) {
+      .label {
+        padding-top: 0;
+      }
+    }
+    flex-direction: column;
+    .label {
+      padding-top: 2rem;
+      font-weight: 700;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      color: $color-black1;
+      padding-bottom: 0.5rem;
+    }
+    .ant-input {
+      padding-right: 3rem !important;
+      height: 4rem;
+    }
+    .icon-password {
+      width: 1.5rem;
+      right: 1rem;
+    }
+  }
+
+  .ant-btn {
+    @include auth-btn;
+    margin-bottom: 2rem;
+    width: 43.8rem;
+    height: 4.8rem;
+    margin-top: 3rem;
+  }
+  .contact-info {
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    color: $color-grey2;
+    text-align: center;
+  }
+}
+.ant-modal-root {
+  .modal-error-login {
+    .ant-btn-default {
+      display: none !important;
+    }
+    .ant-modal-content .ant-modal-footer button.ant-btn-primary {
+      min-height: 4.4rem;
+    }
+  }
+}

@@ -1,0 +1,88 @@
+@import 'src/scss/variables';
+
+.modal-custom-root {
+  &.modal-create-edit-admin {
+    max-width: 64rem !important;
+    width: 100% !important;
+    .modal-custom-content-children {
+      padding-left: 4.5rem;
+      padding-right: 4.5rem;
+
+      .iis-add-new-and-edit-admin-root {
+        .iis-admin-detail-module-root {
+          .form {
+            .input-root {
+              .input-wrapper .ant-input {
+                height: 3.2rem;
+                max-width: 32rem;
+                width: 100%;
+                border-radius: 0.4rem;
+              }
+
+              &.text-item {
+                height: 4.8rem;
+                margin-bottom: 1.6rem;
+
+                .label {
+                  min-width: 15.7rem;
+                  font-size: $font-text_small;
+                  font-family: NotoSansJP-Bold, sans-serif;
+                }
+              }
+            }
+
+            .color-select-root {
+              .label {
+                max-width: 15.7rem;
+                width: 100%;
+              }
+            }
+
+            .control-wrapper {
+              display: flex;
+              justify-content: space-between;
+              flex: auto;
+              width: 100%;
+              height: 4.8rem;
+
+              .control {
+                flex: 2;
+              }
+
+              .color-preview-wrapper {
+                flex: 1;
+                max-width: 6.4rem;
+                width: 100%;
+                height: 2.743rem;
+                border-radius: 0.5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid $color-border;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .modal-custom-content-action-footer {
+      display: flex;
+      justify-content: center;
+
+      .setting-template-create-edit-admin {
+        &:hover {
+          cursor: pointer;
+        }
+
+        display: flex;
+        column-gap: 0.967rem;
+        align-items: center;
+
+        .label {
+          min-width: fit-content;
+        }
+      }
+    }
+  }
+}

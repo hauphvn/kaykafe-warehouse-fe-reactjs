@@ -1,0 +1,31 @@
+@import 'src/scss/variables';
+@import 'src/scss/mixins';
+
+.multi-select-tag-root {
+  .selection-place {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.4rem 1.9rem;
+    .item {
+      height: 3rem;
+      border: 0.1rem solid $color-border;
+      border-radius: 1.5rem;
+      font-size: $font-text_small;
+      padding: 0.5rem 2rem;
+      @include center;
+      cursor: pointer;
+      &.selected {
+        background-color: $color-primary;
+        color: $color-text;
+      }
+    }
+    .empty {
+      margin: 10.5rem auto 0;
+    }
+  }
+  .label {
+    &.required {
+      @include required;
+    }
+  }
+}

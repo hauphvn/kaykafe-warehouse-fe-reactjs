@@ -1,0 +1,84 @@
+@mixin input-detail-row($lableWidth, $rowHeight, $inputWidth, $inputHeight) {
+  @if $rowHeight {
+    min-height: $rowHeight;
+    gap: 0;
+  }
+  @if $lableWidth {
+    .label {
+      min-width: $lableWidth;
+    }
+  }
+
+  @if $inputWidth {
+    .input-wrapper {
+      max-width: $inputWidth;
+      .input-item input {
+        max-width: $inputWidth;
+        width: $inputWidth;
+      }
+    }
+  }
+  @if $inputHeight {
+    .input-wrapper {
+      .input-item input {
+        height: $inputHeight;
+      }
+    }
+  }
+}
+
+@mixin textarea-detail-row($lableWidth, $textareaHeight, $textareaWidth) {
+  @if $textareaHeight {
+    height: $textareaHeight;
+    max-height: $textareaHeight;
+    gap: 0;
+  }
+  @if $lableWidth {
+    .label {
+      padding-top: 0;
+      min-width: $lableWidth;
+    }
+  }
+
+  @if $textareaWidth {
+    .textarea-wrapper {
+      max-width: $textareaWidth;
+    }
+  }
+}
+
+@mixin common-input($lableWidth, $rowHeight, $inputWidth, $inputHeight) {
+  .auto-complete-root,
+  .datepicker-root,
+  .input-root,
+  .textarea-common-root {
+    @include input-detail-row($lableWidth, $rowHeight, $inputWidth, $inputHeight);
+  }
+
+  .select-root {
+    @include select-detail-row($lableWidth, $rowHeight, $inputWidth, $inputHeight);
+  }
+}
+@mixin select-detail-row($lableWidth, $rowHeight, $selectWidth, $selectHeight) {
+  @if $rowHeight {
+    min-height: $rowHeight;
+    gap: 0;
+  }
+  @if $lableWidth {
+    .label {
+      min-width: $lableWidth;
+    }
+  }
+
+  @if $selectWidth {
+    .ant-select {
+      min-width: $selectWidth !important;
+      max-width: $selectWidth !important;
+    }
+  }
+  @if $selectHeight {
+    .ant-select.ant-select-single .ant-select-selector {
+      height: $selectHeight;
+    }
+  }
+}

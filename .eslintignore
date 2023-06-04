@@ -1,0 +1,6 @@
+build/
+node_modules/
+src/reportWebVitals.ts
+src/serviceWorker.ts
+src/assets/
+dist/

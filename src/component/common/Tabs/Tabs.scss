@@ -1,0 +1,28 @@
+@import 'src/scss/variables';
+
+.tabs-common-root {
+  .ant-tabs-nav {
+    .ant-tabs-nav-wrap {
+      .ant-tabs-nav-list {
+        .ant-tabs-tab {
+          .ant-tabs-tab-btn {
+            color: $color-grey2;
+            font-size: $font-text_required;
+          }
+
+          &.ant-tabs-tab-active {
+            .ant-tabs-tab-btn {
+            }
+          }
+        }
+
+        .ant-tabs-ink-bar {
+          background-color: $color-primary;
+        }
+      }
+    }
+  }
+
+  .ant-tabs-content-holder {
+  }
+}

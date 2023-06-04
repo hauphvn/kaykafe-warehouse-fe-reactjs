@@ -1,0 +1,49 @@
+@import 'src/scss/mixins';
+@import 'src/scss/variables';
+.textarea-common-root {
+  font-size: $font-text;
+  line-height: 2.4rem;
+  display: flex;
+  // gap: 0.9rem;
+  border-radius: 0.8rem;
+
+  &.textarea-required {
+    @include text-required;
+  }
+
+  .textarea-wrapper {
+    width: 100%;
+    .textarea-root {
+      font-size: $font-text;
+      line-height: 2.4rem;
+      min-height: 9.8rem;
+      color: $color-black;
+      &:hover,
+      &:focus {
+        box-shadow: none;
+      }
+    }
+    textarea {
+      resize: none;
+      &.ant-input-disabled {
+        color: $color-black;
+        border-color: rgba($color: $color-border, $alpha: 0.5) !important;
+      }
+    }
+  }
+
+  .label {
+    padding-top: 3.8rem;
+  }
+
+  .required {
+    color: $color-required;
+    font-size: $font-text_required;
+  }
+  &.disable-white {
+    .ant-input.ant-input-disabled {
+      background-color: $color-white;
+      color: $color-black;
+    }
+  }
+}

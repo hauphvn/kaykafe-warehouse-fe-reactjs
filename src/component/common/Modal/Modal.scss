@@ -1,0 +1,67 @@
+@import 'src/scss/variables';
+
+.ant-modal-root {
+  .ant-modal-title {
+    color: $color-primary;
+    text-align: center;
+  }
+
+  .ant-modal {
+    border-radius: 1.2rem;
+  }
+
+  .ant-modal-content {
+    border-radius: 1.2rem;
+    .ant-modal-header {
+      border-radius: 1.2rem 1.2rem 0 0;
+      padding: 0 !important;
+      height: 6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .ant-modal-title {
+        font-size: $font-title_small;
+        color: $color-black;
+      }
+    }
+
+    .ant-modal-footer {
+      padding: 0;
+      padding-bottom: 2rem;
+      text-align: center;
+      border-top: 0;
+      display: flex;
+      justify-content: center;
+      flex-direction: row-reverse;
+      column-gap: 2rem;
+      button {
+        border-radius: 0.6rem;
+        font-size: $font-text;
+        line-height: 2.4rem;
+        padding: 0;
+        color: $color-white;
+        border-color: unset;
+        width: 11rem;
+        min-width: unset;
+        height: unset;
+        min-height: unset;
+      }
+      button.ant-btn-default {
+        background-color: $color-grey7;
+      }
+      button.ant-btn-primary {
+        background-color: $color-primary;
+        color: $color-text;
+        &:disabled {
+          background-color: rgba($color-primary, 0.6);
+        }
+      }
+      button:focus,
+      button:hover,
+      button:active {
+        border-color: unset;
+      }
+    }
+  }
+}

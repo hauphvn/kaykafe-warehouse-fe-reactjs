@@ -1,0 +1,49 @@
+@import 'src/scss/mixins';
+
+.color-select-root {
+  display: flex;
+
+  &.color-select-required {
+    @include text-required;
+  }
+
+  .color-items-container {
+    display: flex;
+    flex-direction: column;
+
+    .items {
+      display: flex;
+      column-gap: 0.8rem;
+      justify-content: center;
+      align-items: center;
+      .item-color {
+        &.active {
+          border: 2px solid $color-grey3;
+          padding: 1px;
+          box-sizing: border-box;
+        }
+
+        .color {
+          width: 2rem;
+          height: 2rem;
+          &:hover {
+            cursor: pointer;
+            transform: scale(1.08);
+            transition: transform .2s;
+          }
+        }
+
+
+
+      }
+    }
+
+
+  }
+
+  .required {
+    color: $color-required;
+    font-size: $font-text_required;
+    line-height: 1.6rem;
+  }
+}

@@ -1,0 +1,119 @@
+@import 'src/scss/table';
+@import 'src/scss/variables';
+
+.company-user-list-root {
+  @include cssTableWidth(false, 7.6%, 9.5%, 11.4%, 19.8%, 9.6%, 14.4%, 8.7%, false);
+  @include cssTableMinWidth(false, 8.9rem, 11.1rem, 13.3rem, 23.2rem, 11.3rem, 16.9rem, 10.2rem, false);
+
+  .table-container {
+    .table-layout-root {
+      .search-root {
+        padding: 2.4rem 3rem 2.6rem 2.3rem;
+        align-items: end;
+
+        .search-place {
+          max-width: 62.4rem;
+          column-gap: 6.4rem;
+          row-gap: 2.2rem;
+
+          .select-root, .input-root, .multi-select-root {
+            row-gap: 1.2rem;
+
+            .ant-select.ant-select-multiple {
+              min-width: 24rem !important;
+            }
+
+            .label {
+              font-size: $font-text_small;
+              font-family: NotoSansJP-Bold, sans-serif;
+            }
+
+            .select-wrapper {
+              .ant-select, .ant-input {
+                min-height: 3.2rem;
+                height: 3.2rem;
+                border-radius: .4rem;
+              }
+            }
+
+            &:nth-child(odd) {
+              min-width: 24rem;
+            }
+
+            &:nth-child(even) {
+              min-width: 32rem;
+            }
+
+            .input-wrapper {
+              .ant-input-affix-wrapper {
+                border-radius: .4rem;
+              }
+            }
+          }
+
+        }
+
+        .submit-place {
+          justify-content: end;
+
+          .button-root.ant-btn {
+            height: 3.2rem;
+            font-size: $font-text;
+            font-family: NotoSansJP-Bold, sans-serif;
+          }
+        }
+      }
+
+      .table-layout-container {
+        .table-footer-wrapper {
+          align-items: center;
+          position: relative;
+
+          .setting-action {
+            position: absolute;
+            left: 0;
+            display: flex;
+            padding-left: 4.8rem;
+            top: 2.5rem;
+            color: $color-black1;
+            column-gap: .967rem;
+
+            :hover {
+              cursor: pointer;
+            }
+
+            .label {
+              font-size: $font-text_required;
+              color: $color-black1;
+            }
+          }
+        }
+
+        .table_action-root {
+          .btn-list {
+            .ant-btn {
+              width: fit-content !important;
+              font-size: $font-text;
+              font-family: NotoSansJP-Bold, sans-serif;
+              height: 3.2rem;
+            }
+          }
+
+        }
+      }
+    }
+
+    .ant-table-thead {
+      .ant-table-column-title {
+        font-size: $font-text;
+      }
+    }
+
+    .ant-table-tbody {
+      .ant-table-cell {
+        font-size: $font-text;
+      }
+    }
+  }
+
+}

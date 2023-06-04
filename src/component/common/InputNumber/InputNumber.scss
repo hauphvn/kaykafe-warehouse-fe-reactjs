@@ -1,0 +1,63 @@
+@import 'src/scss/variables';
+@import 'src/scss/mixins';
+.input-number-root {
+  display: flex;
+  // gap: 0.9rem;
+  &.input-required {
+    @include text-required;
+  }
+
+  .label {
+    padding-top: 0.8rem;
+    min-width: fit-content;
+  }
+  .input-wrapper {
+    width: 100%;
+
+    .input-item input {
+      height: 3.5rem;
+      font-size: $font-text;
+      line-height: 1.89rem;
+      border-radius: 0.8rem;
+      border: $border;
+      width: 100%;
+      padding: 0.4rem 1rem;
+      @include input-placeholder;
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      /* Firefox */
+      &[type='number'] {
+        -moz-appearance: textfield;
+      }
+      outline: none;
+      &:focus {
+        box-shadow: 0 0 0 0.2rem rgb(24 144 255 / 20%);
+        border-right-width: 0.1rem;
+        outline: 0;
+      }
+      &:disabled {
+        color: $color-black;
+      }
+    }
+  }
+  .required {
+    color: $color-required;
+    font-size: $font-text_required;
+    line-height: 1.6rem;
+  }
+  .input-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+
+    .label-after {
+      color: $color-grey;
+    }
+  }
+}

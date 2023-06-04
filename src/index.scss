@@ -1,0 +1,60 @@
+@import 'src/scss/variables';
+@font-face {
+  font-family: NotoSansJP-Regular;
+  src: url('./fonts/NotoSansJP-Regular.otf');
+}
+
+@font-face {
+  font-family: NotoSansJP-Bold;
+  src: url('./fonts/NotoSansJP-Bold.otf');
+}
+
+@font-face {
+  font-family: NotoSansJP-Medium;
+  src: url('./fonts/NotoSansJP-Medium.otf');
+}
+:root {
+  font-size: 10px;
+  --dynamic-color-primary: #1d3494;
+  --dynamic-color-text: #ffffff;
+}
+
+body#body {
+  font-family: NotoSansJP-Regular, sans-serif;
+  font-weight: 400;
+  background-color: $color-white;
+  color: $color-black;
+}
+
+::-webkit-scrollbar {
+  width: 0.6rem !important;
+}
+
+::-webkit-scrollbar-track {
+  background-color: $color-white;
+  border-radius: 1rem;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0.8rem;
+  background: rgba($color: $color-border, $alpha: 0.5);
+  &:hover {
+    background-color: rgba($color: $color-border, $alpha: 0.7);
+  }
+}
+
+::-webkit-scrollbar {
+  height: 0.6rem;
+  width: 0.6rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}

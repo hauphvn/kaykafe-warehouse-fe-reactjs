@@ -1,0 +1,57 @@
+@import "src/scss/variables";
+@import "src/scss/table";
+
+.modal-custom-root {
+  &.modal-error-notification-document {
+    max-width: 99rem !important;
+    width: 100% !important;
+
+    .modal-custom-content-children {
+      padding-left: 4.5rem;
+      padding-right: 4.5rem;
+
+      .error-notification-document-root {
+        @include cssTableWidth(5.8rem, 20rem, 16.9rem, 27.6rem);
+
+        .ant-table-container {
+          margin-bottom: 3.4rem;
+          .ant-table-body {
+            max-height: 40.2rem!important;
+          }
+        }
+      }
+
+    }
+
+    .modal-custom-content-action-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .setting-download-file-common-editing {
+        .setting-content-wrapper {
+          display: flex;
+          column-gap: 0.967rem;
+
+          img {
+            width: 1.167rem;
+          }
+
+          .label {
+            min-width: fit-content;
+            font-size: $font-text;
+            color: $color-blue-1;
+            text-decoration: underline;
+            font-family: NotoSansJP-Bold, sans-serif;
+          }
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+
+
+      }
+    }
+  }
+}

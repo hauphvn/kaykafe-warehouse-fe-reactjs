@@ -1,0 +1,23 @@
+@import 'src/scss/variables';
+
+.loading-page-root {
+  z-index: 99999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba($color: $color-border, $alpha: 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s ease;
+
+  .spin {
+    svg {
+      path {
+        fill: $color-primary;
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@import 'src/scss/variables';
+.btn-csv-root {
+  width: 11.6rem;
+  height: 3.5rem;
+  border: 0.1rem solid $color-border;
+  border-radius: 0.1rem;
+  background-color: $color-primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: $color-text;
+  font-size: $font-text;
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-text;
+  }
+}

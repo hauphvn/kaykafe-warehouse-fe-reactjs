@@ -1,0 +1,26 @@
+@import 'src/scss/variables';
+
+$heightTitle: 8.4rem;
+$marginBottom: 2.4rem;
+$height-main-content: calc(100vh - #{$height-header + $heightTitle + $marginBottom});
+
+.main-wrapper-root {
+  width: 100%;
+
+  .main-wrapper-title {
+    font-size: 3.2rem;
+    line-height: 3.5rem;
+    height: $heightTitle;
+    display: flex;
+    align-items: center;
+    padding-left: 2.4rem;
+  }
+  .main-contaiter {
+    max-height: $height-main-content;
+    height: 100vh;
+    overflow-y: auto;
+    margin: 0 2.4rem $marginBottom;
+    background-color: $color-white;
+    border-radius: 0.5rem;
+  }
+}

@@ -1,0 +1,12 @@
+@import 'antd/dist/antd.css';
+@import 'src/scss/variables';
+
+#root {
+  max-width: 192rem;
+  margin: 0 auto;
+}
+
+.App {
+  font-size: $font-text;
+  line-height: 2.4rem;
+}

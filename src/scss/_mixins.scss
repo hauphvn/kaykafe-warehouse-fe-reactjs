@@ -1,0 +1,112 @@
+@import 'src/scss/variables';
+
+$desktop-max-width: 1200px;
+$laptop-max-width: 1023px;
+$tablet-max-width: 767px;
+$mobile-max-width: 480px;
+
+@mixin desktop {
+  @media (max-width: #{$desktop-max-width}) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (max-width: #{$laptop-max-width}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$tablet-max-width}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$mobile-max-width}) {
+    @content;
+  }
+}
+
+@mixin required {
+  &::after {
+    content: '*';
+    color: $color-required;
+    font-size: $font-title_small;
+    line-height: 0;
+    //position: absolute;
+    //top: 18px;
+    //right: -14px;
+  }
+}
+
+@mixin text-required {
+  .label {
+    @include required;
+  }
+}
+
+@mixin input-custom-border-bottom {
+  height: 2.9rem;
+  font-size: $font-title_small;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  border-bottom: $border;
+  box-shadow: none;
+}
+
+@mixin cut-text {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: pre;
+}
+
+@mixin modal {
+  .ant-modal-body {
+    height: 9rem;
+    max-height: 9rem;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+@mixin button-normal {
+  width: 12rem;
+  height: 4.4rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 1px 2px $color-btn-shadow;
+  font-family: NotoSansJP-Medium, sans-serif;
+}
+@mixin cancel-btn {
+  background-color: $color-white;
+  color: $color-black1;
+  border-color: $color-btn-border;
+  font-family: NotoSansJP-Medium, sans-serif;
+
+}
+
+@mixin input-placeholder {
+  &::placeholder {
+    color: $color-grey5;
+    opacity: 1;
+  }
+  &:-ms-input-placeholder {
+    color: $color-grey5;
+  }
+  &::-ms-input-placeholder {
+    color: $color-grey5;
+  }
+  &.ant-input-disabled {
+    border-color: $color-border;
+  }
+}
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

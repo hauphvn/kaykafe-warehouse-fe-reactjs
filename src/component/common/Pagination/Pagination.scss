@@ -1,0 +1,36 @@
+@import 'src/scss/variables';
+.pagination-root {
+  .ant-pagination-item-active {
+    border-color: $color-primary;
+    background-color: $color-primary;
+    a {
+      color: $color-text;
+    }
+    &.ant-pagination-item:hover {
+      a {
+        color: $color-text;
+      }
+    }
+  }
+  .ant-pagination-item:hover {
+    border-color: $color-primary;
+    a {
+      color: unset;
+    }
+  }
+  .ant-pagination-prev,
+  .ant-pagination-next {
+    & :hover {
+      border-color: $color-primary;
+      color: $color-primary;
+    }
+    .ant-pagination-item-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      span {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}

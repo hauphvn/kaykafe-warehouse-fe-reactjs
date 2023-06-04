@@ -1,0 +1,79 @@
+@import 'src/scss/mixins';
+.search-root {
+  display: flex;
+  // box-shadow: 0 0.3rem 0.6rem $color-box-shadow;
+  min-height: 10.5rem;
+  // background: $color-white;
+  padding-left: 3.4rem;
+  border-radius: 0.5rem;
+  align-items: center;
+  max-width: 100%;
+  border: 1px solid $color-border;
+  margin: 0.7rem 2.367rem;
+  flex-wrap: wrap;
+  .search-place {
+    column-gap: 2.4rem;
+    row-gap: 0.6rem;
+    display: flex;
+    max-width: calc(100% - 18rem);
+    flex-wrap: wrap;
+
+    .input-root,
+    .multi-select-root,
+    .select-root,
+    .auto-complete-root,
+    .datepicker-wrapper,
+    .datepicker-root {
+      width: 21.3rem;
+      min-width: 21.3rem;
+      font-size: $font-text_small;
+      flex-direction: column;
+      gap: 0.3rem;
+      align-items: flex-start;
+      min-height: unset;
+      .datepicker-item,
+      .input-item input,
+      .ant-select .ant-select-selector {
+        border: 0.1rem solid $color-border !important;
+        border-radius: 0.4rem !important;
+      }
+      .input-item .ant-input-affix-wrapper {
+        input {
+          border: none !important;
+        }
+      }
+      .label {
+        padding-top: 0;
+        color: $color-black1;
+      }
+    }
+  }
+  .submit-place {
+    display: flex;
+    flex: 1;
+    margin-left: 2.4rem;
+    gap: 2.4rem;
+    padding-top: 2.7rem;
+  }
+  .multi-select-root .ant-select .ant-select-selection-overflow .ant-select-selection-overflow-item {
+    & span {
+      &:first-child {
+        max-width: 10rem;
+      }
+    }
+  }
+}
+
+.multi-select-search-setting {
+  span.ant-select-tree-title {
+    @include cut-text;
+    width: 17rem;
+    display: block;
+  }
+  .ant-select-tree-treenode-disabled {
+    span.ant-select-tree-title {
+      width: auto;
+      overflow: initial;
+    }
+  }
+}

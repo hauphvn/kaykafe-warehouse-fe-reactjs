@@ -1,0 +1,74 @@
+@import 'src/scss/mixins';
+@import 'src/scss/variables';
+
+.select-root {
+  display: flex;
+  // gap: 0.9rem;
+  width: 100%;
+  .ant-select {
+    &.ant-select-single {
+      .ant-select-selector {
+        display: flex;
+        align-items: center;
+        height: 3.5rem;
+        min-height: 3.5rem;
+        border-radius: 0.8rem;
+        border-color: $color-border !important;
+        .ant-select-selection-item {
+          line-height: 3.6rem;
+        }
+
+        .label-after {
+          color: $color-grey;
+        }
+      }
+      &.ant-select-disabled {
+        .ant-select-selector {
+          color: $color-black;
+          border-color: rgba($color: $color-border, $alpha: 0.5) !important;
+        }
+        .ant-select-arrow {
+          display: none;
+        }
+      }
+    }
+  }
+  &.select-required {
+    @include text-required;
+  }
+
+  .label {
+    padding-top: 0.8rem;
+  }
+
+  .required {
+    color: $color-required;
+    font-size: $font-text_required;
+  }
+
+  .select-wrapper {
+    width: 100%;
+    .ant-select.ant-select-single.ant-select-show-arrow {
+      display: flex;
+      flex-direction: row-reverse;
+      span.ant-select-arrow {
+        width: 2.21rem;
+      }
+    }
+
+    .ant-select-clear {
+      font-size: 2.3rem;
+      width: 2.3rem;
+      height: 2.5rem;
+      top: 30%;
+    }
+  }
+  .ant-select-arrow {
+    right: 0.5rem;
+  }
+  &.disable-white {
+    .ant-select-disabled.ant-select:not(.ant-select-customize-input) .ant-select-selector {
+      background-color: $color-white;
+    }
+  }
+}

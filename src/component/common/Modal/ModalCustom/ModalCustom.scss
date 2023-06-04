@@ -1,0 +1,61 @@
+@import 'src/scss/mixins';
+
+.modal-custom-root {
+  .ant-modal-content {
+    .ant-modal-close-x {
+      width: 13.6rem;
+      color: $color-black1;
+    }
+
+    span.anticon {
+      &.anticon-close.ant-modal-close-icon {
+        svg {
+          width: 1.5rem;
+          height: 1.5rem;
+          fill: $color-black1;
+        }
+      }
+    }
+
+    .ant-modal-body {
+      padding: 2.4rem 4rem;
+      .modal-custom-content {
+        .modal-custom-content-header {
+          display: flex;
+          align-items: center;
+          column-gap: 1.6rem;
+          padding-bottom: 2rem;
+          padding-left: 2.4rem;
+
+          .modal-custom-content-header-title {
+            font-size: $font-text_big;
+            font-family: NotoSansJP-Medium, sans-serif;
+            color: $color-black1;
+          }
+        }
+
+        .modal-custom-content-action-footer {
+          margin-top: 1.6rem;
+          padding-right: 2.4rem;
+          padding-left: 4.5rem;
+
+          .modal-custom-content-action-footer-submit {
+            display: flex;
+            column-gap: 1.2rem;
+
+            button.ant-btn.ant-btn-primary.button-root {
+              &.cancel-btn, &.ok-btn {
+                @include button-normal;
+              }
+
+              &.cancel-btn {
+                @include cancel-btn;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

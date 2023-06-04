@@ -1,0 +1,41 @@
+@import 'src/scss/variables.scss';
+.range-date-picker-root {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  &:hover,
+  &:focus {
+    border-color: $color-primary;
+    box-shadow: none;
+  }
+  &.ant-picker-focused {
+    border-color: $color-primary;
+    box-shadow: none;
+  }
+  .range-date-picker {
+    height: 35px;
+    border-radius: 8px;
+    width: 240px;
+    border: 0.1rem solid $color-border;
+  }
+}
+
+.ant-picker-panel {
+  .ant-picker-body {
+    .ant-picker-content {
+      .ant-picker-cell-inner {
+        &::before {
+          border-color: $color-primary;
+        }
+      }
+    }
+    .ant-picker-cell-in-view.ant-picker-cell-selected .ant-picker-cell-inner {
+      background-color: $color-primary;
+    }
+  }
+  .ant-picker-footer {
+    a {
+      color: $color-black;
+    }
+  }
+}

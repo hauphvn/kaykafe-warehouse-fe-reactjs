@@ -1,0 +1,123 @@
+@import 'src/scss/variables';
+.left-nav-root {
+  min-width: 24rem;
+  height: calc(100vh - $height-header);
+  background: rgba($color: $color-white, $alpha: 1);
+  box-shadow: 0 0.3rem 0.6rem $color-box-shadow;
+
+  .ant-menu {
+    background-color: transparent;
+    position: relative;
+    padding-top: 3rem;
+    padding-right: 0.6rem;
+
+    &.ant-menu-root {
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    li.ant-menu-submenu {
+      .ant-menu-title-content {
+        font-size: $font-text;
+      }
+      > .ant-menu-submenu-title {
+        padding-left: 1.7rem !important;
+      }
+      ul {
+        padding: 0 0.5rem;
+        .ant-menu-item {
+          padding-left: 3rem !important;
+          height: 4.4rem;
+          &:focus {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+    li.ant-menu-item {
+      padding-left: 1.7rem !important;
+    }
+  }
+
+  .ant-menu-inline.ant-menu-root .ant-menu-item,
+  .ant-menu-submenu-title {
+    &:hover {
+      color: $color-black;
+    }
+    .ant-menu-title-content {
+      font-size: $font-text_small;
+      line-height: 2.4rem;
+      color: $color-black;
+      margin-left: 0.1rem;
+      padding-left: 1rem;
+    }
+  }
+  .ant-menu-light {
+    .ant-menu-submenu-selected {
+      .ant-menu-submenu-title {
+        font-family: NotoSansJP-Bold, sans-serif;
+      }
+    }
+    .ant-menu-submenu-title {
+      color: $color-black;
+
+      &:hover {
+        color: $color-black;
+      }
+    }
+  }
+
+  .ant-menu:not(.ant-menu-horizontal) {
+    .ant-menu-item {
+      border-right: 0.3rem solid transparent;
+      &::after {
+        border-right: 0.3rem solid transparent;
+      }
+    }
+    .ant-menu-item-selected {
+      background-color: transparent;
+      border-radius: 0.4rem;
+      font-family: NotoSansJP-Bold, sans-serif;
+      color: $color-black;
+      &::after {
+        border-right: 0.3rem solid transparent;
+      }
+      .ant-menu-title-content {
+        color: $color-primary;
+      }
+    }
+  }
+  .ant-menu-submenu:hover > .ant-menu-submenu-title > .ant-menu-submenu-arrow {
+    color: $color-black;
+  }
+
+  //
+  .ant-slide-up-appear,
+  .ant-slide-up-enter,
+  .ant-slide-up-leave {
+    animation-duration: 0s !important;
+  }
+
+  .ant-menu-submenu-arrow::before,
+  .ant-menu-submenu-arrow::after {
+    width: 0.8rem;
+  }
+
+  .ant-menu-item-selected {
+    svg {
+      path {
+        fill: $color-primary;
+      }
+      &.icon-terms {
+        path {
+          stroke: $color-primary;
+          fill: none;
+        }
+      }
+    }
+
+    .icon-user-management {
+      fill: $color-primary;
+    }
+  }
+}

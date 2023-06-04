@@ -1,0 +1,101 @@
+@import 'src/scss/variables';
+@import 'src/scss/mixins';
+
+.multi-select-root {
+  display: flex;
+  // gap: 0.9rem;
+  align-items: center;
+
+  &.input-required {
+    @include text-required;
+  }
+
+  .field-wrapper {
+    .required {
+      color: $color-required;
+      font-size: $font-text_required;
+      line-height: 1.6rem;
+    }
+  }
+
+  .ant-select.ant-select-multiple {
+    width: 21.5rem !important;
+
+    .ant-select-selector {
+      display: flex;
+      align-items: center;
+      position: relative;
+      height: 3.5rem;
+      min-height: 3.5rem;
+      border-radius: 0.5rem !important;
+      border-color: $color-border;
+
+      &:not(.ant-select-customize-input) {
+        min-height: 3.5rem;
+      }
+
+      .ant-select-selection-search {
+        input {
+          font-size: $font-text;
+          line-height: 1.89rem;
+          @include input-placeholder;
+        }
+      }
+
+      .label-after {
+        color: $color-grey;
+      }
+    }
+  }
+
+  .ant-select {
+    width: 100%;
+
+    .ant-select-selection-overflow {
+      flex-wrap: nowrap;
+
+      .ant-select-selection-overflow-item {
+        max-width: 95%;
+      }
+    }
+  }
+
+  .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    min-height: 4rem;
+    border-radius: 0.8rem;
+  }
+}
+
+.multi-select-item {
+  .ant-select-tree-list-holder-inner {
+    .ant-select-tree-treenode {
+      &:nth-child(1) {
+        .select-all__block {
+          .ant-checkbox-group {
+            margin-left: 0.3rem !important;
+            width: 100%;
+
+            .ant-checkbox-wrapper {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .ant-select-tree-checkbox.ant-select-tree-checkbox-disabled,
+  .ant-select-tree-switcher-noop {
+    display: none;
+  }
+
+  .ant-select-tree .ant-select-tree-treenode-disabled .ant-select-tree-node-content-wrapper {
+    cursor: pointer;
+  }
+
+  .ant-select-tree-checkbox-checked .ant-select-tree-checkbox-inner {
+    background-color: $color-primary;
+    border-color: $color-primary;
+  }
+
+}

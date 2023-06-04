@@ -1,0 +1,95 @@
+@import 'src/scss/mixins';
+.datepicker-root {
+  display: flex;
+  width: 21.5rem;
+  &.datepicker-required {
+    @include text-required;
+  }
+  .label {
+    min-width: fit-content;
+    padding-top: 0.8rem;
+  }
+  .datepicker-item {
+    &:hover,
+    &:focus {
+      border-color: $color-border;
+      box-shadow: none;
+    }
+    &.ant-picker-focused {
+      border-color: $color-border;
+      box-shadow: none;
+    }
+
+    display: flex;
+    align-items: center;
+    height: 3.5rem;
+    width: 100%;
+    min-height: 3.5rem;
+    border-radius: 0.8rem;
+    border-color: $color-border;
+
+    .ant-picker-input {
+      input {
+        height: 3.5rem;
+        font-size: $font-text;
+        line-height: 1.89rem;
+        border-radius: 0.8rem;
+        border-color: $color-border;
+        @include input-placeholder;
+      }
+    }
+  }
+  .ant-picker-panel {
+    .ant-picker-body {
+      .ant-picker-content {
+        .ant-picker-cell-inner {
+          &::before {
+            border-color: $color-border;
+          }
+        }
+      }
+      .ant-picker-cell-in-view.ant-picker-cell-selected .ant-picker-cell-inner {
+        background-color: $color-border;
+      }
+    }
+    .ant-picker-footer {
+      a {
+        color: $color-black;
+      }
+    }
+  }
+  .required {
+    color: $color-required;
+    font-size: $font-text_required;
+  }
+  &.disable-white {
+    .ant-picker.ant-picker-disabled {
+      background-color: $color-white;
+      input {
+        color: $color-black !important;
+        font-size: $font-text_small;
+      }
+    }
+  }
+}
+
+.ant-picker-dropdown {
+  .ant-picker-today-btn {
+    color: $color-primary;
+  }
+}
+
+.ant-picker-cell-in-view.ant-picker-cell-today .ant-picker-cell-inner::before {
+  border-color: $color-primary;
+}
+
+.ant-picker-cell-in-view.ant-picker-cell-selected .ant-picker-cell-inner,
+.ant-picker-cell-in-view.ant-picker-cell-range-start .ant-picker-cell-inner,
+.ant-picker-cell-in-view.ant-picker-cell-range-end .ant-picker-cell-inner {
+  background-color: $color-primary;
+}
+
+.ant-picker-clear {
+  // display: none;
+  font-size: 2.3rem;
+}

@@ -1,0 +1,90 @@
+.history-root {
+  .table-root {
+    .ant-table {
+      .ant-table-container {
+        .ant-table-thead tr th.ant-table-cell {
+          &:nth-child(1) {
+            padding-left: 3.3rem;
+          }
+        }
+
+        .ant-table-body {
+          tr.ant-table-row.ant-table-row-level-0 {
+            td.ant-table-cell:nth-child(1) {
+              padding-left: 2.9rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .search-root {
+    align-items: flex-end;
+    padding-top: 2.4rem;
+    padding-bottom: 2.4rem;
+    justify-content: space-between;
+
+    .search-place {
+      justify-content: space-between;
+      max-width: 82rem;
+      column-gap: 12.2rem;
+      row-gap: 2.4rem;
+
+      .input-root,
+      .select-root {
+        min-width: 34.6rem;
+      }
+      .input-root,
+      .multi-select-root,
+      .select-root,
+      .auto-complete-root {
+        gap: 0.8rem;
+      }
+
+      .datepickers-root {
+        display: flex;
+        flex: auto;
+        justify-content: space-between;
+        min-width: 32rem;
+        gap: 0;
+        .datepicker-root {
+          width: auto;
+          min-width: unset;
+          gap: 0.8rem;
+          .datepicker-wrapper {
+            width: auto;
+            min-width: unset;
+          }
+          .datepicker-item {
+            width: 13.4rem;
+          }
+        }
+        .datepicker-root:first-child {
+          .datepicker-wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 0;
+            // &:after {
+            //   content: '〜';
+            //   margin: 0 3.2rem;
+            // }
+          }
+        }
+        .datepicker-root:nth-child(2) {
+          height: 2.4rem;
+          min-width: unset !important;
+          width: 134px !important;
+        }
+      }
+    }
+
+    .submit-place {
+      flex: none;
+      display: block;
+      margin-right: 3rem;
+    }
+  }
+}

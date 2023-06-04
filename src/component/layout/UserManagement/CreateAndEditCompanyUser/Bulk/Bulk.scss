@@ -1,0 +1,62 @@
+@import "src/scss/variables";
+
+.modal-custom-root {
+  &.modal-create-edit-company-user {
+    .modal-custom-content-children {
+      padding-left: 4.5rem;
+      padding-right: 4.5rem;
+
+      .modal-add-new-bulk-children {
+        .bulk-user-root {
+          .form {
+            .input-root, .select-root {
+              .input-wrapper .ant-input, .ant-select-selector {
+                height: 3.2rem;
+                min-height: 3.2rem;
+                max-width: 32rem;
+                //min-width: 32rem;
+                width: 100%;
+                border-radius: 0.4rem;
+              }
+
+              &.text-item {
+                height: 4.8rem;
+                margin-bottom: 1.6rem;
+
+                .label {
+                  min-width: 15.7rem;
+                  font-family: NotoSansJP-Bold, sans-serif;
+                }
+              }
+
+            }
+
+            .upload-files-bulk-wrapper {
+              justify-content: space-between;
+              column-gap: 1.9rem;
+              flex: auto;
+              display: flex;
+
+              .input-root {
+                flex: 2;
+
+              }
+
+              .btn-upload {
+                flex: 0;
+                background-color: $color-primary;
+                min-width: 7.2rem;
+                height: 3.2rem;
+                border-color: $color-primary;
+                border-radius: 0.5rem;
+              }
+            }
+
+          }
+        }
+      }
+
+    }
+
+  }
+}

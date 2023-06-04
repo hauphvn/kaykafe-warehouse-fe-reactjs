@@ -1,0 +1,20 @@
+@import 'src/scss/auth';
+
+.form-wrapper-root {
+  @include auth-block(2.7rem, 40.8rem);
+  padding: 2.7rem 2.1rem 2rem;
+  box-shadow: 0rem 0.3rem 0.6rem $color-box-shadow;
+  border-radius: 2rem;
+  opacity: 1;
+  background-color: $color-white;
+  .text-title {
+    @include auth-title(0);
+    line-height: 4rem;
+  }
+
+  .input-form {
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 2.1rem;
+  }
+}

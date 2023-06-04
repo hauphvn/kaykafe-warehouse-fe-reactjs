@@ -1,0 +1,362 @@
+@import 'src/scss/variables';
+@import 'src/scss/mixins';
+
+.table-root {
+  border-radius: 0;
+  overflow: hidden;
+  &.custom-color-checkbox{
+    .ant-checkbox-wrapper{
+      .ant-checkbox{
+        border: 1px solid $color-primary;
+        border-radius: .4rem;
+      }
+    }
+  }
+  .ant-table {
+    overflow: hidden;
+    background-color: $color-white;
+
+    table {
+      width: 100% !important;
+    }
+
+    .ant-table-container {
+      padding: 0.7rem 2.367rem;
+      border-radius: 0;
+      &.custom-color-checkbox{
+        .ant-checkbox-wrapper{
+          .ant-checkbox{
+            border: 1px solid $color-primary;
+            border-radius: .4rem;
+          }
+        }
+      }
+      .ant-table-header {
+        .ant-table-thead {
+          tr > th.ant-table-selection-column {
+            .ant-table-selection {
+              .ant-checkbox-wrapper {
+                .ant-checkbox-indeterminate {
+                  .ant-checkbox-inner {
+                    background-color: $color-primary;
+
+                    &:after {
+                      background-color: $color-white;
+                      //transform: translate(-20%, -50%) scale(1);
+                      width: 13px;
+                      height: 4px;
+                      top: 50%;
+                      left: 33.5%;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .ant-table-row {
+        &:nth-child(odd) {
+          td {
+            background-color: $color-blue-matte;
+          }
+        }
+      }
+
+      .ant-table-cell {
+        padding: 0.2rem 0.4rem;
+        font-size: $font-text;
+        line-height: 2.5rem;
+        // border-bottom: 0.1rem solid rgba($color: $color-grey, $alpha: 0.3);
+        border-bottom: none;
+        background-color: $color-white;
+
+        &:nth-child(2) {
+          padding-left: 0.8rem;
+        }
+
+        .ant-checkbox-inner {
+          width: 2.4rem;
+          height: 2.4rem;
+
+          &::after {
+            left: 30%;
+          }
+        }
+
+        .ant-checkbox-checked .ant-checkbox-inner,
+        .ant-checkbox-indeterminate .ant-checkbox-inner::after {
+          background-color: $color-primary;
+          border-color: $color-primary;
+        }
+
+        &.ant-table-column-sort {
+          background-color: $color-white;
+        }
+
+        .td-span {
+          display: block;
+          color: $color-black;
+          @include cut-text;
+          padding: 1.3rem 1rem 1.3rem 0;
+          width: 100%;
+        }
+
+        a {
+          color: $color-primary;
+          font-size: $font-text_small;
+        }
+
+        .error-message {
+          color: $color-red-2;
+        }
+
+        .under-line {
+          text-decoration: underline;
+        }
+
+        .bold-16 {
+          font-family: NotoSansJP-Bold, sans-serif;
+        }
+
+        .allow-hover {
+          &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+          }
+        }
+
+        .icon-file-type-upload {
+          display: flex;
+          column-gap: 0.8rem;
+          justify-content: center;
+          align-items: center;
+
+          img {
+            width: 2.4rem;
+            height: 2.4rem;
+          }
+        }
+
+        .icon-file-type-list-all {
+          display: flex;
+          column-gap: 0.8rem;
+          align-items: center;
+
+          img {
+            width: 2.4rem;
+            height: 2.4rem;
+          }
+        }
+
+        .btn-list {
+          .gap-small {
+            column-gap: 0.4rem;
+          }
+
+          .gap-11 {
+            column-gap: 1.1rem;
+          }
+
+          .btn-span {
+            display: block;
+            width: 9.4rem;
+            text-align: center;
+            height: 2.8rem;
+          }
+
+          .tag {
+            background: rgba($color: $color-red-light, $alpha: 0.1);
+            color: $color-red-light;
+            border-radius: 1.4rem;
+          }
+
+          .highlight {
+            color: $color-primary;
+          }
+
+          .icons-wrapper {
+            display: flex;
+            column-gap: 1.6rem;
+            align-items: center;
+            .text-small {
+              font-size: $font-text_small;
+            }
+
+            &.gap-small {
+              column-gap: 0.4rem;
+            }
+
+            img {
+              &:hover:not(.no-hover) {
+                cursor: pointer;
+              }
+
+              &.disabled-hover {
+                &:hover {
+                  cursor: not-allowed;
+                }
+              }
+            }
+            .item-icon{
+              padding: 1.3rem 1rem 1.3rem 0;
+              display: flex;
+              &:hover:not(.no-hover) {
+                cursor: pointer;
+              }
+              &.disabled-hover {
+                &:hover {
+                  cursor: not-allowed;
+                }
+              }
+              svg path{
+                margin-top: .4rem;
+                fill: $color-primary;
+              }
+            }
+          }
+        }
+
+        .tags-contact {
+          display: flex;
+          column-gap: 0.4rem;
+
+          .tag {
+            width: 2.4rem;
+            min-width: 2.4rem;
+            height: 2.4rem;
+            border-radius: 0.3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: $font-text;
+
+            &.tag-m {
+              border: 0.1rem solid $color-notification-email;
+            }
+
+            &.tag-s {
+              border: 0.1rem solid $color-notification-sms;
+            }
+
+            &.tag-l {
+              border: 0.1rem solid $color-notification-line;
+            }
+          }
+        }
+      }
+
+      .ant-table-thead {
+        .ant-table-column-sorters {
+          justify-content: flex-start;
+        }
+
+        tr {
+          th.ant-table-selection-column {
+            width: 6.8rem !important;
+          }
+
+          th.ant-table-cell {
+            background-color: $color-white;
+            color: $color-black;
+            padding: 1.3rem 0.4rem;
+            font-size: $font-text;
+            line-height: 2.5rem;
+            font-family: NotoSansJP-Bold, sans-serif;
+            border-bottom: 0.1rem solid rgba($color: $color-grey, $alpha: 0.3);
+            border-top: 0;
+            white-space: break-spaces;
+
+            &::before {
+              content: '';
+              width: 0;
+              height: 0;
+            }
+
+            &:hover {
+              background-color: $color-white;
+            }
+
+            &:nth-child(2) {
+              padding-left: 0.8rem;
+            }
+
+            &.ant-table-selection-column {
+              //text-align: left;
+              //width: 3.2rem;
+              .ant-table-selection {
+                .ant-checkbox-wrapper {
+                  .ant-checkbox-indeterminate {
+                    .ant-checkbox-inner {
+                      &::after {
+                        left: 50%;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .ant-table-cell-scrollbar {
+          display: none;
+        }
+
+        .ant-table-column-title {
+          white-space: pre-line;
+          flex: unset;
+          text-align: center;
+        }
+
+        .ant-table-column-sorter {
+          margin-left: 0.5rem;
+          top: 0.32rem;
+          position: relative;
+
+          .anticon {
+            // later sort icon
+            color: $color-black;
+          }
+
+          .active {
+            // later sort icon
+            color: $color-primary;
+          }
+        }
+      }
+    }
+
+    .ant-table-placeholder {
+      .ant-table-expanded-row-fixed {
+        width: 50rem !important;
+        height: 20rem;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .action-info {
+    .dropdown-action {
+      position: fixed;
+      top: 3rem;
+      left: 0;
+      border: 1px solid $color-border;
+      background-color: $color-white;
+      z-index: 999999999;
+
+      &.hide {
+        display: none;
+      }
+
+      &.show {
+        display: block;
+      }
+    }
+  }
+
+  table > colgroup > col.ant-table-selection-col {
+    min-width: 6.8rem;
+  }
+}

@@ -1,0 +1,135 @@
+@import 'src/scss/variables';
+@import 'src/scss/table';
+
+.modal-custom-root {
+  &.modal-admin-create-edit-notification {
+    max-width: 82rem !important;
+    width: 100% !important;
+    .modal-custom-content-children {
+      padding-left: 4.5rem;
+      padding-right: 4.5rem;
+
+      .iis-add-new-and-edit-notification-root {
+        .iis-notification-detail-module-root {
+          .form {
+            .label{
+              font-family: NotoSansJP-Bold, sans-serif;
+              font-size: $font-text-small;
+              color: $color-black1;
+            }
+            .text-editor-root {
+              display: flex;
+              flex: auto;
+              height: 17rem;
+              max-height: 20rem;
+              margin-bottom: 2.4rem;
+
+              .label {
+                width: 9.6rem;
+              }
+
+              .text-editor-wrapper {
+                flex: 2;
+
+                .rsw-editor {
+                  height: 100%;
+                }
+              }
+            }
+
+            .input-root {
+              .input-wrapper .ant-input {
+                height: 3.2rem;
+                max-width: 32rem;
+                width: 100%;
+                border-radius: 0.4rem;
+              }
+
+              &.text-item {
+                height: 4.8rem;
+                margin-bottom: 0.8rem;
+
+                .label {
+                  min-width: 9.6rem;
+                }
+              }
+            }
+
+            .control-range-date {
+              margin-bottom: 2.4rem;
+              display: flex;
+
+              .range-date-wrapper {
+                display: flex;
+
+                .datepickers-root {
+                  column-gap: 8.4rem;
+
+                  img.img {
+                    display: none;
+                  }
+                }
+
+                .datepicker-root {
+                  .label {
+                    min-width: 9.6rem;
+                  }
+                  .datepicker-wrapper {
+                    min-width: 13.4rem;
+                    height: 3.6rem;
+                  }
+
+                  .datepicker-item {
+                    border: 1px solid rgba(65, 63, 68, 0.3);
+                    border-radius: 3px;
+                  }
+                }
+              }
+            }
+
+            .control-checkbox-list {
+              @include cssTableWidth(false, 27.6rem);
+              .ant-table-container {
+                padding: .5rem 2.367rem 0 0;
+                max-width: 36rem;
+                .ant-table-thead {
+                  .ant-table-cell {
+                    padding-top: 0;
+                    font-size: $font-text;
+                  }
+                }
+
+                .ant-table-body {
+                  width: 35rem;
+                  .ant-table-expanded-row-fixed {
+                    height: 15.4rem;
+                    max-width: 35rem;
+                    width: 34rem!important;
+                  }
+
+                  .ant-table-row {
+                    height: 40px;
+                    max-height: 40px;
+
+                    .ant-table-cell {
+                      .td-span {
+                        padding: 0;
+                        font-size: $font-text_small;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .modal-custom-content-action-footer {
+      display: flex;
+      justify-content: center;
+      padding-top: 4.18rem;
+    }
+  }
+}

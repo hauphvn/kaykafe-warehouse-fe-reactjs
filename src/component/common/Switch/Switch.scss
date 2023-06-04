@@ -1,0 +1,9 @@
+@import 'src/scss/variables';
+
+.switch-root {
+  display: flex;
+  align-items: center;
+  .ant-switch-checked {
+    background-color: $color-primary;
+  }
+}

@@ -1,0 +1,148 @@
+@import 'src/scss/variables';
+@import 'src/scss/table';
+
+.modal-custom-root {
+  &.modal-preview-document-in-valid-root {
+    @include cssTableWidth(6rem, 45.2rem, 17.3rem, 28.1rem, false, false, false, false, false);
+
+    max-width: 88rem !important;
+    width: 100% !important;
+
+    .modal-preview-document-in-valid-children {
+      padding-left: 4.5rem;
+      padding-right: 4.5rem;
+
+      .modal-preview-document-in-valid-detail {
+        .form {
+          width: 100%;
+
+          .table-result-wrapper {
+            .title-wrapper {
+              margin-bottom: 1rem;
+              margin-top: 2.4rem;
+              display: flex;
+              column-gap: 6.4rem;
+
+              .item {
+                font-size: $font-text_small;
+
+                .high-line {
+                  color: $color-red-2;
+                }
+
+                .padding-left {
+                  padding-left: 3.6rem;
+                }
+
+                .label {
+                  font-family: NotoSansJP-Bold, sans-serif;
+                }
+              }
+            }
+
+            .table-root {
+              min-width: fit-content;
+              margin-bottom: 2rem;
+
+              .ant-table-container {
+                padding: 0;
+                border-radius: 0;
+                .ant-table-body {
+                  max-height: 16.2rem!important;
+                }
+
+                .ant-table-thead tr th.ant-table-cell {
+                  padding: 1.5rem 0 1.3rem 0.6rem;
+                }
+
+                table > colgroup > col.ant-table-selection-col {
+                  min-width: unset;
+                }
+              }
+            }
+
+          }
+
+          .input-root {
+            .input-wrapper .ant-input {
+              height: 3.2rem;
+              max-width: 32rem;
+              width: 100%;
+              border-radius: 0.4rem;
+            }
+
+            &.text-item {
+              height: 4.8rem;
+              margin-bottom: 0.8rem;
+
+              .label {
+                min-width: 16rem;
+                font-size: $font-text_small;
+                font-family: NotoSansJP-Bold, sans-serif;
+              }
+            }
+
+            &:nth-child(2) {
+              flex-direction: column;
+              row-gap: .8rem;
+
+              .input-wrapper .ant-input {
+                height: 3.2rem;
+                max-width: 100%;
+              }
+
+              &.text-item {
+                height: 8.4rem;
+              }
+            }
+          }
+        }
+
+        .warning-text-submit {
+          color: $color-red-2;
+          font-size: $font-text;
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+
+    .download-preview-in-valid {
+      display: flex;
+      align-items: center;
+
+      .download-content-wrapper {
+        display: flex;
+        column-gap: 0.967rem;
+        align-items: center;
+        padding-left: 5rem;
+
+        img {
+          width: 1.167rem;
+        }
+
+        .label {
+          min-width: fit-content;
+          color: $color-blue-1;
+          font-size: $font-text;
+          font-family: NotoSansJP-Bold, sans-serif;
+          text-decoration: underline;
+        }
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+
+
+    }
+
+    .modal-custom-content-action-footer {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 5.6rem;
+
+    }
+  }
+
+}

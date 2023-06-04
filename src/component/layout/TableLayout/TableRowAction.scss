@@ -1,0 +1,48 @@
+@import 'src/scss/variables';
+.table_action-root {
+  display: flex;
+  align-items: center;
+  padding: 6.4rem 3.956rem 0 3.531rem;
+  justify-content: space-between;
+
+  .title {
+    font-weight: 700;
+    font-size: $font-text_big;
+    line-height: 2.5rem;
+    color: $color-black1;
+  }
+
+  .btn-list {
+    display: flex;
+    align-items: center;
+    gap: 3.2rem;
+    .btn-delete-action-table{
+      background-color: $color-orange;
+      border-color: $color-orange;
+      &[disabled]{
+        background-color: $color-orange-opacity-60!important;
+        border: none;
+      }
+    }
+    .btn-send-action-table{
+      background-color: $color-primary;
+      border-color: $color-primary;
+    }
+  }
+  .dropdown {
+    background-color: $color-primary;
+    width: 17.6rem;
+    height: 3.2rem;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: $color-white;
+    cursor: pointer;
+  }
+
+  .button-root {
+    border-radius: 2rem;
+  }
+}

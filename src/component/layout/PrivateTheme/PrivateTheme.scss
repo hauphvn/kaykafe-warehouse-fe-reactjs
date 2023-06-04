@@ -1,0 +1,12 @@
+@import 'src/scss/variables';
+.private-theme-root {
+  .theme-content {
+    display: flex;
+    align-items: flex-start;
+  }
+  .private-content {
+    width: 100%;
+    background-color: $color-background;
+    overflow-x: auto;
+  }
+}

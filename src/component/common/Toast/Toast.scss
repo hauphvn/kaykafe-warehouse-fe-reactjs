@@ -1,0 +1,26 @@
+.ant-notification,
+.ant-notification-topRight {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  left: 0;
+}
+
+.ant-notification-notice {
+  display: flex;
+  align-items: center;
+  &.ant-notification-notice-success,
+  &.ant-notification-notice-error {
+    .ant-notification-notice-with-icon {
+      display: flex;
+      align-items: center;
+      .ant-notification-notice-icon {
+        margin-left: -0.5rem;
+      }
+      .ant-notification-notice-message {
+        margin-left: 4.5rem;
+        color: inherit;
+      }
+    }
+  }
+}
